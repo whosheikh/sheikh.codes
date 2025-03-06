@@ -29,7 +29,6 @@ const nextConfig = {
   },
   experimental: {
     optimizeCss: true,
-    serverActions: true,
   },
   swcMinify: true,
   compiler: {
