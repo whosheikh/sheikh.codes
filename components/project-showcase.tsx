@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import Image from "next/image"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
 import { ArrowUpRight, Github, ExternalLink } from "lucide-react"
@@ -10,13 +9,19 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { siteConfig } from "@/config/site"
+import { OptimizedImage } from "@/components/optimized-image"
 
-export function ProjectShowcase({ limit = 0 }: { limit?: number }) {
+interface ProjectShowcaseProps {
+  limit?: number
+  featuredImages?: string[]
+}
+
+export function ProjectShowcase({ limit = 0, featuredImages = [] }: ProjectShowcaseProps) {
   const [hoveredId, setHoveredId] = useState<number | null>(null)
   const projects = limit > 0 ? siteConfig.projects.filter((p) => p.featured).slice(0, limit) : siteConfig.projects
 
   return (
-    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {projects.map((project, index) => (
         <motion.div
           key={project.id}
@@ -27,16 +32,21 @@ export function ProjectShowcase({ limit = 0 }: { limit?: number }) {
           onHoverEnd={() => setHoveredId(null)}
           className="group relative"
         >
-          <Card className="h-full flex flex-col bg-gradient-to-br from-muted/50 via-background to-muted/50 backdrop-blur-xl border-2 border-muted/80 dark:bg-opacity-10">
+          <Card className="h-full flex flex-col bg-gradient-to-br from-muted/50 via-background to-muted/50 backdrop-blur-xl border-2 border-muted/80 dark:bg-opacity-10 overflow-hidden">
             <div className="relative aspect-video overflow-hidden rounded-t-lg">
-              <Image
-                src={project.image || "/placeholder.svg"}
+              <OptimizedImage
+                src={
+                  featuredImages && featuredImages.length > index
+                    ? featuredImages[index]
+                    : project.image || "/placeholder.svg?height=400&width=600"
+                }
                 alt={project.title}
                 fill
                 className={`object-cover transition-all duration-500 ${
                   hoveredId === project.id ? "scale-110 blur-[2px]" : "scale-100"
                 }`}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                fallback="/placeholder.svg?height=400&width=600"
               />
               <AnimatePresence>
                 {hoveredId === project.id && (

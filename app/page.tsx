@@ -16,26 +16,7 @@ import { siteConfig } from "@/config/site"
 export default function HomePage() {
   return (
     <>
-      <SchemaJsonLd
-        type="Person"
-        name="Sheikh Likhon"
-        description="Full-stack developer and SEO specialist based in Bangladesh"
-        url={siteConfig.url}
-        sameAs={[
-          siteConfig.links.github,
-          siteConfig.links.twitter,
-          siteConfig.links.linkedin,
-          siteConfig.links.gitlab,
-          siteConfig.links.telegram,
-        ]}
-        jobTitle="Full-Stack Developer & SEO Specialist"
-        worksFor={{
-          "@type": "Organization",
-          name: "VorTex",
-        }}
-        knowsAbout={["React", "Redux", "Node.js", "Sails", "PHP", "C#", "ASP.NET", "SEO", "Knowledge Graphs"]}
-      />
-
+      <SchemaJsonLd type="WebSite" name={siteConfig.name} description={siteConfig.description} url={siteConfig.url} />
       <main className="container px-4 py-12 md:py-20">
         <DomainSwitcher className="mb-10" />
 
@@ -66,7 +47,7 @@ export default function HomePage() {
             <div className="order-1 md:order-2">
               <div className="relative mx-auto aspect-square max-w-[350px] overflow-hidden rounded-xl border shadow-xl">
                 <Image
-                  src="/images/profile.jpg"
+                  src="https://public.bnbstatic.com/image/pgc/202311/534707992a2382225ce8b11b3e7bcb72.png"
                   alt="Sheikh Likhon"
                   fill
                   priority
@@ -121,7 +102,14 @@ export default function HomePage() {
               </div>
             }
           >
-            <ProjectShowcase limit={3} />
+            <ProjectShowcase
+              limit={3}
+              featuredImages={[
+                "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/vortexcybersecurity.org-X4jXEpZGj8D9k4UTRPfhBeeIlhDAai.webp",
+                "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/PorashonaGPT.jpg-4ljGW0ADy1NGiSxFWzAGthuKbKns3Y.jpeg",
+                "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/RecentCoders-mROYoatNQAxJBcypoYzDtaUXoZfzIt.png",
+              ]}
+            />
           </Suspense>
         </section>
 

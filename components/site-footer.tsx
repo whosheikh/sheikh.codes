@@ -7,10 +7,31 @@ import { SocialLinks } from "@/components/social-links"
 import { siteConfig } from "@/config/site"
 
 const poweredByLogos = [
-  { src: "/images/logos/vercel.svg", alt: "Powered by Vercel", href: "https://vercel.com" },
-  { src: "/images/logos/cloudflare.svg", alt: "Protected by Cloudflare", href: "https://www.cloudflare.com" },
-  { src: "/images/logos/github.svg", alt: "Available on GitHub", href: "https://github.com" },
-  { src: "/images/logos/gitlab.svg", alt: "Available on GitLab", href: "https://gitlab.com" },
+  {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/bed8ea59-160f-4c32-adc2-0093bbbe11fa-3DbWB5HO1JmMN3jhKsaQCE2In0VA7U.png",
+    alt: "Powered by Vercel",
+    href: "https://vercel.com",
+  },
+  {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/cf_secured_logo-myaJraofxyNHJtjSrD3pLImbQ7Selb.png",
+    alt: "Protected by Cloudflare",
+    href: "https://www.cloudflare.com",
+  },
+  {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pci_dss_compliant_logo-ylunBUPBKbj5UO2a2mpm5Uv0So4rIC.png",
+    alt: "PCI DSS Compliant",
+    href: "#",
+  },
+  {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/dmca-badge-iI818fjCpryXfXzfu6KsZBlJvrlVJc.png",
+    alt: "DMCA Protected",
+    href: "https://www.dmca.com",
+  },
+  {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1342-gitlab-logo_small-uEqGoZW22i1uYsxdUUylsj5Noxopxb.png",
+    alt: "Available on GitLab",
+    href: "https://gitlab.com",
+  },
 ]
 
 export function SiteFooter() {
@@ -91,15 +112,16 @@ export function SiteFooter() {
 
       <div className="border-t border-border">
         <div className="container py-8">
-          <div className="flex flex-wrap justify-center gap-6 md:gap-8">
+          <h3 className="mb-4 text-center text-sm font-semibold">Powered By & Protected By</h3>
+          <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8">
             {poweredByLogos.map((logo) => (
-              <Link key={logo.alt} href={logo.href} target="_blank" rel="noopener noreferrer">
+              <Link key={logo.alt} href={logo.href} target="_blank" rel="noopener noreferrer" className="block">
                 <Image
                   src={logo.src || "/placeholder.svg"}
                   alt={logo.alt}
                   width={120}
                   height={40}
-                  className="h-8 w-auto"
+                  className="h-8 w-auto object-contain"
                 />
               </Link>
             ))}

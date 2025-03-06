@@ -1,7 +1,6 @@
 import Link from "next/link"
-import Image from "next/image"
 import { ArrowLeft, Github } from "lucide-react"
-import { ThemeToggle } from "@/components/theme-toggle"
+import { OptimizedImage } from "@/components/optimized-image"
 import { SchemaJsonLd } from "@/components/schema-json-ld"
 
 export const metadata = {
@@ -18,11 +17,7 @@ export default function AboutPage() {
         name="Likhon Sheikh"
         jobTitle="Full-Stack Developer & SEO Specialist"
         url="https://sheikh.codes/about"
-        sameAs={[
-          "https://github.com/sheikh-developer",
-          "https://huggingface.co/likhonsheikh",
-          "https://t.me/likhonsheikh",
-        ]}
+        sameAs={["https://github.com/whosheikh", "https://huggingface.co/likhonsheikh", "https://t.me/likhonsheikh"]}
       />
       <div className="min-h-screen bg-background">
         <header className="border-b border-border">
@@ -31,7 +26,6 @@ export default function AboutPage() {
               <span className="text-xl font-bold">Likhon Sheikh</span>
             </Link>
             <nav className="flex items-center gap-4 md:gap-6">
-              <ThemeToggle />
               <Link href="/about" className="text-sm font-medium hover:underline">
                 About
               </Link>
@@ -58,7 +52,7 @@ export default function AboutPage() {
             <div className="flex flex-col gap-8 md:flex-row md:gap-16">
               <div className="md:w-1/3">
                 <div className="relative aspect-square overflow-hidden rounded-xl">
-                  <Image
+                  <OptimizedImage
                     src="https://cdn.bio.link/uploads/profile_pictures/2023-03-19/UiY9qoV5xOgwCX9H7inNc2N9fdSInGWi.png"
                     alt="Likhon Sheikh"
                     fill
@@ -66,7 +60,7 @@ export default function AboutPage() {
                   />
                 </div>
                 <div className="mt-6 flex justify-center gap-4">
-                  <Link href="https://github.com/sheikh-developer" target="_blank" rel="noopener noreferrer">
+                  <Link href="https://github.com/whosheikh" target="_blank" rel="noopener noreferrer">
                     <Github className="h-5 w-5 text-muted-foreground hover:text-foreground transition-colors" />
                     <span className="sr-only">GitHub</span>
                   </Link>

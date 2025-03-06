@@ -1,17 +1,26 @@
-import mysql from "mysql2/promise"
+import mysql from "serverless-mysql"
 
-const pool = mysql.createPool({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
-  waitForConnections: true,
-  connectionLimit: 10,
-  queueLimit: 0,
+const db = mysql({
+  config: {
+    host: process.env.DB_HOST,
+    port: Number.parseInt(process.env.DB_PORT || "3306"),
+    database: process.env.DB_NAME,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+  },
 })
 
-export async function query(sql: string, params: any[] = []) {
-  const [results] = await pool.execute(sql, params)
-  return results
+export interface QueryResult {
+  [key: string]: any
+}
+
+export async function query(q: string, values: any[] = []): Promise<QueryResult[]> {
+  try {
+    const results = await db.query(q, values)
+    await db.end()
+    return results as QueryResult[]
+  } catch (error) {
+    throw new Error(error as string)
+  }
 }
 
