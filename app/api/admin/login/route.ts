@@ -12,7 +12,7 @@ export async function POST(req: Request) {
 
     // Get user from database
     const users = await query("SELECT * FROM users WHERE email = ?", [email])
-    const user = users[0]
+    const user = users[0] as { id: string; password: string } | undefined
 
     if (!user) {
       return NextResponse.json({ error: "User not found" }, { status: 404 })
