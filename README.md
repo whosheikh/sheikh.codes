@@ -16,7 +16,7 @@ Personal website and portfolio of Sheikh Likhon, showcasing my work as a full-st
 - **PWA Support**: Progressive Web App capabilities for mobile installation
 - **Blog Platform**: Markdown support for technical articles and insights
 - **Project Showcase**: Interactive portfolio of my development work
-- **Contact Integration**: Direct communication channel for potential clients
+
 
 ## 🚀 Tech Stack
 
