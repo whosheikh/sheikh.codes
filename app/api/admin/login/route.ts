@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server"
 import { sign } from "jsonwebtoken"
-import { query } from "@/lib/db"
+import { query, type QueryResult } from "@/lib/db"
 import { createHash } from "crypto"
 
 export async function POST(req: Request) {
@@ -11,7 +11,7 @@ export async function POST(req: Request) {
     const hashedPassword = createHash("sha256").update(password).digest("hex")
 
     // Get user from database
-    const users = await query("SELECT * FROM users WHERE email = ?", [email])
+    const users: QueryResult[] = await query("SELECT * FROM users WHERE email = ?", [email])
     const user = users[0] as { id: string; password: string } | undefined
 
     if (!user) {

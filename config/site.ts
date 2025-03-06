@@ -5,13 +5,13 @@ export const siteConfig: SiteConfig = {
   description:
     "Sheikh Likhon is a full-stack developer and SEO specialist, expert in React, Redux, Node.js, Sails, PHP, C#, ASP.NET, and advanced SEO techniques including Knowledge Graphs.",
   url: "https://sheikh.codes",
-  ogImage: "https://sheikh.codes/og-image.jpg",
+  ogImage: "https://public.bnbstatic.com/image/pgc/202311/534707992a2382225ce8b11b3e7bcb72.png",
   links: {
-    twitter: "https://twitter.com/sheikhcodes",
-    github: "https://github.com/sheikhcodes",
-    linkedin: "https://linkedin.com/in/sheikhcodes",
-    gitlab: "https://gitlab.com/sheikhcodes",
-    telegram: "https://t.me/sheikhcodes",
+    twitter: "https://twitter.com/whosheikh",
+    github: "https://github.com/whosheikh",
+    linkedin: "https://linkedin.com/in/whosheikh",
+    gitlab: "https://gitlab.com/whosheikh",
+    telegram: "https://t.me/whosheikh",
   },
   author: "Sheikh Likhon",
   keywords: [

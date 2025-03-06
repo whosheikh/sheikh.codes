@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/next"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/e0523a2a6763434c901f7d4255c6862e.txt",
+      "dest": "/e0523a2a6763434c901f7d4255c6862e.txt"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ],
+  "env": {
+    "NEXT_PUBLIC_SITE_URL": "https://sheikh.codes"
+  }
+}
+

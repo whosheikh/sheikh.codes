@@ -6,6 +6,7 @@
 
 Personal website and portfolio of Sheikh Likhon, showcasing my work as a full-stack developer and SEO specialist based in Bangladesh.
 
+![sheikh.codes](https://via.placeholder.com/800x400?text=sheikh.codes+Screenshot)
 
 ## ✨ Features
 
@@ -16,7 +17,7 @@ Personal website and portfolio of Sheikh Likhon, showcasing my work as a full-st
 - **PWA Support**: Progressive Web App capabilities for mobile installation
 - **Blog Platform**: Markdown support for technical articles and insights
 - **Project Showcase**: Interactive portfolio of my development work
-
+- **Contact Integration**: Direct communication channel for potential clients
 
 ## 🚀 Tech Stack
 
@@ -41,88 +42,4 @@ npm install
 
 # Run the development server
 npm run dev
-```
 
-Visit [http://localhost:3000](http://localhost:3000) to see the website in action.
-
-## 🔧 Configuration
-
-Create a `.env.local` file in the root directory with the following variables:
-
-```
-NEXT_PUBLIC_SITE_URL=https://sheikh.codes
-NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=G-XXXXXXXXXX
-# Add other environment variables as needed
-```
-
-## 📝 Usage
-
-### Adding a New Blog Post
-
-Create a new markdown file in the `content/blog` directory:
-
-```md
----
-title: "Your Blog Title"
-date: "2025-03-07"
-excerpt: "Brief description of your blog post"
-coverImage: "/images/blog/cover.jpg"
-tags: ["web development", "react", "next.js"]
----
-
-Your blog content goes here...
-```
-
-### Adding a New Project
-
-Update the projects data file at `data/projects.ts`:
-
-```typescript
-export const projects = [
-  {
-    id: "project-id",
-    title: "Project Name",
-    description: "Project description goes here",
-    technologies: ["Next.js", "Tailwind CSS", "TypeScript"],
-    imageUrl: "/images/projects/project-screenshot.png",
-    demoUrl: "https://project-demo.com",
-    githubUrl: "https://github.com/whosheikh/project-repo",
-    featured: true
-  },
-  // Add more projects...
-];
-```
-
-## 🌐 Deployment
-
-The site can be deployed on Vercel, Netlify, or any other platform that supports Next.js:
-
-```bash
-# Build for production
-npm run build
-
-# Start production server
-npm start
-```
-
-## 💻 Repository Links
-
-- GitHub: [github.com/whosheikh/sheikh.codes](https://github.com/whosheikh/sheikh.codes)
-- GitLab: [gitlab.com/whosheikh/sheikh.codes](https://gitlab.com/whosheikh/sheikh.codes)
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-
-Project Link: [https://sheikh.codes](https://sheikh.codes)
