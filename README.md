@@ -6,7 +6,6 @@
 
 Personal website and portfolio of Sheikh Likhon, showcasing my work as a full-stack developer and SEO specialist based in Bangladesh.
 
-![sheikh.codes](https://via.placeholder.com/800x400?text=sheikh.codes+Screenshot)
 
 ## ✨ Features
 
